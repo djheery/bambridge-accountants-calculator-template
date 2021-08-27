@@ -1,0 +1,11 @@
+{
+  "name": "calculator-template",
+  "version": "1.0.0",
+  "description": "Bambridge Accountants Calculator Template",
+  "main": "calculator-app,js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Daniel Heery",
+  "license": "ISC"
+}
