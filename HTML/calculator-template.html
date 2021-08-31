@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="bacc-calculator__form-container">
+    <form class="bacc-calculator form-group">
+      <div class="bacc-calculator-container">
+        <section class="bacc-calculator-heading">
+          <h2 class="bacc-heading">Roth Ira vs Traditional IRA Calculator</h2>
+          <p class="bacc__sub-heading">Compare how your contributions differ between Roth IRA and Traditional IRA savings</p>
+        </section>
+      </div>
+      <div class="two-input-row">
+        <div class="starting-balance form-group">
+          <div class="label-container">
+            <label for="sb" class="calc-label">Starting Balance</label>
+            <div class="tooltip-container">
+              <span class="tooltip-icon">?</span>
+              <div class="tooltip-content ttc-sb tooltip-content__left">
+                <span class="tooltip-close">x</span>
+                <p class="tooltip-text">Please enter your current balance of your Roth IRA/ Traditional IRA. If you do not already have you feel free to leave it at zero. Alternitavely enter the balance you plan to start off</p>
+              </div>
+            </div>
+          </div>
+          <div class="input-container" data-error="Please Enter a Number 0 or above">
+            <div class="before-input-box">$</div>
+            <input type="number" class="calc-input sb" id="sb" value='0'>
+          </div>
+        </div>
+        <div class="annual-contribution form-group">
+          <div class="label-container">
+            <label for="ac" class="calc-label">Annual Contribution</label>
+            <div class="tooltip-container">
+              <span class="tooltip-icon">?</span>
+              <div class="tooltip-content ttc-ac tooltip-content__right">
+                <span class="tooltip-close">x</span>
+                <p class="tooltip-text">Please enter your annual contribution to your Roth IRA/ Traditional IRA. For the year 2020/2021 the maximum contribution is $6,000. <br><br> Please note that the contributions are considered after tax contributions. This affects how the graph below is displayed. In reality the Traditional IRA is not taxed until the point of withdrawral</p>
+              </div>
+            </div>
+          </div> 
+          <div class="input-container" data-error="For the year 2021/2022 the maximum contribution is $6000">
+            <div class="before-input-box">$</div>
+            <input type="number" class="calc-input ac" id="ac" value='6000'>
+          </div>
+        </div>
+      </div>
+      <div class="two-input-row">
+        <div class="roth-age form-group"> 
+          <div class="label-container">
+            <label for="age" class="calc-label">Age</label>
+            <div class="tooltip-container">
+              <span class="tooltip-icon">?</span>
+              <div class="tooltip-content tooltip-content__left">
+                <span class="tooltip-close">x</span>
+                <p class="tooltip-text">Enter your current age</p>
+              </div>
+            </div>
+          </div>
+          <div class="input-container"  data-error="Your age must be lower than your retirement age">
+            <input type="number" class="calc-input age" id="age" value='30'>
+          </div>
+        </div>
+        <div class="expected-retirement form-group">
+          <div class="label-container">
+            <label for="retirement" class="calc-label">Expected Retirement Age</label>
+            <div class="tooltip-container">
+              <span class="tooltip-icon">?</span>
+              <div class="tooltip-content ttc-era tooltip-content__right">
+                <span class="tooltip-close">x</span>
+                <p class="tooltip-text">Enter your expected age of retirement. To withdraw from the Traditional IRA you must be 59 1/2 years old. Withdrwaring earlier will result in you facing a tax penalty</p>
+              </div>
+            </div>
+          </div> 
+          <div class="input-container" data-error="Your age must be lower than your retirement age">
+            <input type="number" class="calc-input retirement" id="retirement" value='65' >
+          </div>
+        </div>
+      </div>
+      <div class="two-input-row">
+        <div class="rate-of-return form-group">
+          <div class="label-container">
+            <label for="ror" class="calc-label">Expected Rate of Return</label>
+                        <div class="tooltip-container">
+              <span class="tooltip-icon">?</span>
+              <div class="tooltip-content ttc-ror tooltip-content__left">
+                <span class="tooltip-close">x</span>
+                <p class="tooltip-text">Enter the expected rate of return on your investments. We have capped the rate of return at 20% to keep this amount conservative. We reccomend choosing a rate of return between 4% and 12% <br><br>
+                Your rate of return will vary on a year to year basis depending on how your investments build.
+                </p>
+              </div>
+            </div>
+          </div> 
+          <div class="input-container" data-error="Please enter a rate of return between 0 - 20%">
+            <div class="before-input-box">%</div>
+            <input type="number" class="calc-input ror" steps='0.1' id="ror" value='10' >
+          </div>
+        </div>
+        <div class="marginal-tax-rate form-group">
+          <div class="label-container">
+            <label for="mtr" class="calc-label">Marginal Tax Rate</label> 
+                        <div class="tooltip-container">
+              <span class="tooltip-icon">?</span>
+              <div class="tooltip-content ttc-mtr tooltip-content__right">
+                <span class="tooltip-close">x</span>
+                <p class="tooltip-text">Please enter your marginal tax rate. The highest marginal tax rate as of 2020/2021 is 37%. If you feel you will have a different tax rate at the point of retirement, please enter this in the advanced dropdown section</p>
+              </div>
+            </div>
+          </div> 
+          <div class="input-container" data-error="Highest tax rate for the US is 37%">
+            <div class="before-input-box">%</div>
+            <input type="number" class="calc-input mtr" id="mtr" value='24' >
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="radio-btn__container">
+          <div class="checklist-btn__adv-settings">
+          <div class="checkbox-control">
+            <input type="checkbox" name="adv-settings" id="adv-settings">
+            <span class="bambridge-custom-checkbox"></span>
+          </div>
+          <label for="adv-settings input-label" class="radio-label checkbox-label">Use Advanced Settings</label>
+        </div>
+      </div>
+      <div id="advanced-settings__container" class="dropdown-closed">
+        <div class="two-input-row adv-set">
+          <div class="radio-btn__container sl-plan__box">
+            <div class="checklist-btn__adv-settings">
+              <div class="maximise-contributions__container">
+                <div class="checkbox-control">
+                  <input type="checkbox" name="maximise-contributions" id="maximise-contributions">
+                  <span class="bambridge-custom-checkbox"></span>
+                </div>
+                <label for="maximise-contributions input-label" class="radio-label">Maximise Contributions</label>
+                <div class="tooltip-container" style="margin-left: 80px;">
+                  <span class="tooltip-icon">?</span>
+                  <div class="tooltip-content ttc-mc tooltip-content__right">
+                    <span class="tooltip-close">x</span>
+                    <p class="tooltip-text">Checking this button will add maximum contributions once you have reached the threshold age until retirement age. <br><br>
+                      In 2021/2022 this means that you are 50 years old and will contribute an extra $1000 (totaling $7000) past this age.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="retirement-tax-rate form-group">
+            <div class="label-container">
+              <label for="rtr" class="calc-label">Expected Retirement Tax Rate</label> 
+              <div class="tooltip-container">
+                <span class="tooltip-icon">?</span>
+                <div class="tooltip-content ttc-ertr tooltip-content__right">
+                  <span class="tooltip-close">x</span>
+                  <p class="tooltip-text">Please enter your estimated tax rate for retirement. This helps us calculate how your Traditional IRA will compare to a Roth IRA at retirement age.</p>
+                </div>
+              </div>
+            </div> 
+            <div class="input-container" data-error="Highest tax rate for the US is 37%">
+              <div class="before-input-box">%</div>
+              <input type="number" class="calc-input rtr" id="rtr" value='24' >
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <br><br>
+    <div class="bacc-calculator-results">
+      <div id="tcalc__summary-container">
+        
+      </div>
+      <div class="barChart-btn">
+        <button class="change-chart-type">View After Tax Comparison</button>
+      </div>
+      
+      <div class="chart-container" style="max-width: 100%; height: 290px; margin: auto">
+        <canvas id="bacc-chart"></canvas>
+      </div>
+      <div class="barChart-btn">
+      </div>
+      <div class="figures-container">
+        <div class="catch-up-contributions"></div>
+        <div class="bacc-calculator-total"></div>
+        <div class="taxable-savings-total"></div>
+      </div>
+    </div>
+    <div class="bacc-calculator-warning">
+      <p class="warning-content">
+        <span class="text-bold">IMPORTANT!</span> The representation of the Traditional IRA would appear slightly different to this in reality. This is due to the manner in which Traditional IRA's are taxed. Rather than being taxed across the years of contributions. Traditional IRA's are not taxed until withdrawral, at which point they are taxed at your marginal tax rate.
+      </p>
+      </div>
+  </div>
+
+</body>
+</html>
